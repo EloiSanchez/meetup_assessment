@@ -3,18 +3,24 @@ with
 
     parsed_events as (
         select
-            id,
+            -- ids
+            event_id::varchar as event_id,
             data:group_id::varchar as group_id,
+            data:venue_id::varchar as venue_id,
+
+            -- strings
             data:name::varchar as name,
             data:description::varchar as description,
+            data:status::varchar as status,
 
-            {{ millisec_to_sec("data:created") }} as created,
-            {{ millisec_to_sec("data:time") }} as time,
-
+            -- numerics
             data:duration::int as duration,
             data:rsvp_limit::int as rsvp_limit,
-            data:venue_id::int as venue_id,
-            data:status::varchar as status,
+
+            -- timestamp
+            {{ millisec_to_sec("data:created") }} as created_at,
+            {{ millisec_to_sec("data:time") }} as start_at,
+
         from raw_events
     )
 select *

@@ -4,14 +4,22 @@ with
 
     parsed_groups as (
         select
-            data:group_id::varchar as id,
+            -- ids
+            data:group_id::varchar as group_id,
+
+            -- strings
             data:name::varchar as name,
             data:description::varchar as description,
             data:city::varchar as city,
-            {{ millisec_to_sec("data:created") }} as created,
+            data:link::varchar as link,
+
+            -- numerics
             data:lat::real as lat,
             data:lon::real as lon,
-            data:link::varchar as link
+
+            -- timestamps
+            {{ millisec_to_sec("data:created") }} as created_at
+
         from raw_groups
     )
 

@@ -6,7 +6,13 @@ with
     ),
 
     parsed_group_topics as (
-        select group_id::varchar as group_id, topics.value::varchar as topic
+        select
+            -- ids
+            group_id::varchar as group_id,
+
+            -- strings
+            topics.value::varchar as topic
+
         from raw_group_topics, lateral flatten(input => raw_group_topics.topics) topics
     )
 

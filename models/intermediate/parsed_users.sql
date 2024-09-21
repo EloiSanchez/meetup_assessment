@@ -3,10 +3,14 @@ with
 
     parsed_users as (
         select
-            data:user_id::int as id,
+            -- ids
+            data:user_id::varchar as user_id,
+
+            -- strings
             data:city::varchar as city,
             data:country::varchar as country,
             data:hometown::varchar as hometown
+
         from raw_users
     )
 

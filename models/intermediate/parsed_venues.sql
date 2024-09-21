@@ -3,12 +3,18 @@ with
 
     parsed_venues as (
         select
-            data:venue_id::int as venue_id,
+            -- ids
+            data:venue_id::varchar as venue_id,
+
+            -- strings
             data:name::varchar as name,
             data:city::varchar as city,
             data:country::varchar as country,
+
+            -- numerics
             data:lat::float as lat,
             data:lon::float as lon
+
         from raw_venues
     )
 

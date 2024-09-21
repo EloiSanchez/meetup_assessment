@@ -6,9 +6,14 @@ with
 
     parsed_user_memberships as (
         select
-            user_id::int as id,
+            -- ids
+            user_id::varchar as user_id,
+
+            -- strings
             memberships.value:group_id::varchar as group_id,
-            {{ millisec_to_sec("memberships.value:joined::varchar") }} as joined,
+
+            -- timestamps
+            {{ millisec_to_sec("memberships.value:joined::varchar") }} as joined_at,
         from
             raw_memberships,
             lateral flatten(input => raw_memberships.memberships) as memberships
