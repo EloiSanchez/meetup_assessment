@@ -1,0 +1,11 @@
+version: 2.0
+
+sources:
+  - name: meetup_data
+    database: meetup_assessment
+    schema: sources
+    tables:
+      - name: events
+      - name: groups
+      - name: users
+      - name: venues
