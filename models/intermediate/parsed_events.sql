@@ -3,6 +3,7 @@ with
 
     parsed_events as (
         select
+            id,
             data:group_id::varchar as group_id,
             data:name::varchar as name,
             data:description::varchar as description,
