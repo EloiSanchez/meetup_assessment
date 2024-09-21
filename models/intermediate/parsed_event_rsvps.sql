@@ -3,7 +3,7 @@ with
         select id as event_id, data:rsvps as rsvps from {{ ref("raw_events") }}
     ),
 
-    parsed_rsvps as (
+    parsed_event_rsvps as (
         select
             event_id,
             rsvps.value:guests::int as guests,
@@ -15,5 +15,5 @@ with
     )
 
 select *
-from parsed_rsvps
+from parsed_event_rsvps
 
