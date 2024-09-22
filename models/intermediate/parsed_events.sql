@@ -2,7 +2,7 @@ with
     raw_events as (select * from {{ ref("raw_events") }}),
 
     parsed_events as (
-        select
+        select distinct
             -- ids
             event_id::varchar as event_id,
             data:group_id::varchar as group_id,

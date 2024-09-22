@@ -1,0 +1,26 @@
+version: 2.0
+
+models:
+  - name: parsed_events
+    description: "Meetup events"
+    columns:
+      - name: event_id
+        data_tests:
+          - not_null
+          - unique
+      - name: group_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('parsed_groups')
+              field: group_id
+      - name: venue_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('parsed_venues')
+              field: venue_id
+      - name: status
+        data_tests:
+          - accepted_values:
+              values: ["past", "upcoming", "cancelled", "proposed", "suggested"]
