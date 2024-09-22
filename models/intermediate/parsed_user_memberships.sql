@@ -8,8 +8,6 @@ with
         select
             -- ids
             user_id::varchar as user_id,
-
-            -- strings
             memberships.value:group_id::varchar as group_id,
 
             -- timestamps

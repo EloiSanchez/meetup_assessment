@@ -1,0 +1,12 @@
+version: 2.0
+
+models:
+  - name: parsed_group_topics
+    description: "Topics that the groups usually focus on"
+    columns:
+      - name: group_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('parsed_groups')
+              field: group_id

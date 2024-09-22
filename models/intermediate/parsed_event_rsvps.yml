@@ -1,0 +1,18 @@
+version: 2.0
+
+models:
+  - name: parsed_event_rsvps
+    description: "RSVPs for the events stored in the parsed_events model"
+    columns:
+      - name: event_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('parsed_events')
+              field: event_id
+      - name: user_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('parsed_users')
+              field: user_id

@@ -1,0 +1,10 @@
+version: 2.0
+
+models:
+  - name: parsed_users
+    description: "Members of Meetup"
+    columns:
+      - name: user_id
+        data_tests:
+          - not_null
+          - unique

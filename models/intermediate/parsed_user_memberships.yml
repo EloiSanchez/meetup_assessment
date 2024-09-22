@@ -1,0 +1,18 @@
+version: 2.0
+
+models:
+  - name: parsed_user_memberships
+    description: "User memberships to Meetup groups"
+    columns:
+      - name: user_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('parsed_users')
+              field: user_id
+      - name: group_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('parsed_groups')
+              field: group_id

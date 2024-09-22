@@ -1,0 +1,10 @@
+version: 2.0
+
+models:
+  - name: parsed_venues
+    description: "Locations where users hold meetups"
+    columns:
+      - name: venue_id
+        data_tests:
+          - not_null
+          - unique
