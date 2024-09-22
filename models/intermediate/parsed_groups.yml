@@ -1,0 +1,10 @@
+version: 2.0
+
+models:
+  - name: parsed_groups
+    description: "Groups that have been created on Meetup"
+    columns:
+      - name: group_id
+        data_tests:
+          - not_null
+          - unique
