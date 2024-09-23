@@ -36,3 +36,7 @@ models:
     intermediate:
       +materialized: view
       +schema: intermediate
+    marts:
+      analytics:
+        +schema: analytics
+        +materialized: table

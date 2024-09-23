@@ -1,0 +1,9 @@
+version: 2.0
+
+models:
+  - name: rsvps_count
+    description: "Grouped rsvps by event_id"
+    columns:
+      - name: event_id
+        data_tests:
+          - not_null
