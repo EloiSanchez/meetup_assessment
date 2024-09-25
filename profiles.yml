@@ -14,7 +14,7 @@ meetup_assessment:
       account: hf70914.eu-central-1
       database: meetup_assessment
       # This should be a dedicated user/role for CI/CD
-      password: env_var("CICD_PASSWORD")
+      password: "{{ env_var('CICD_PASSWORD') }}"
       role: dbt_worker_role
       schema: acc
       threads: 4
@@ -24,7 +24,7 @@ meetup_assessment:
     production:
       account: hf70914.eu-central-1
       database: meetup_assessment
-      # This should be a dedicated user/role for CI/CD
+      # This should be a dedicated user/role scheduled prod runs
       password: xyjA28vfQ7gUU0
       role: dbt_worker_role
       schema: prd
