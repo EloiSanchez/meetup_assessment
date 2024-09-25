@@ -1,0 +1,35 @@
+meetup_assessment:
+  outputs:
+    development:
+      account: hf70914.eu-central-1
+      database: meetup_assessment
+      password: xyjA28vfQ7gUU0
+      role: dbt_worker_role
+      schema: dev
+      threads: 4
+      type: snowflake
+      user: dbt_worker
+      warehouse: compute_wh
+    acceptance:
+      account: hf70914.eu-central-1
+      database: meetup_assessment
+      # This should be a dedicated user/role for CI/CD
+      password: env_var("CICD_PASSWORD")
+      role: dbt_worker_role
+      schema: acc
+      threads: 4
+      type: snowflake
+      user: dbt_worker
+      warehouse: compute_wh
+    production:
+      account: hf70914.eu-central-1
+      database: meetup_assessment
+      # This should be a dedicated user/role for CI/CD
+      password: xyjA28vfQ7gUU0
+      role: dbt_worker_role
+      schema: prd
+      threads: 4
+      type: snowflake
+      user: dbt_worker
+      warehouse: compute_wh
+  target: development
