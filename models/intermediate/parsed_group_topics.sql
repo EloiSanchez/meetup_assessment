@@ -11,7 +11,7 @@ with
             group_id::varchar as group_id,
 
             -- strings
-            topics.value::varchar as topic
+            lower(topics.value::varchar) as topic
 
         from raw_group_topics, lateral flatten(input => raw_group_topics.topics) topics
     )
