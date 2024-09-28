@@ -29,7 +29,7 @@ on all views in database meetup_assessment
 to role superset_analyst_role
 ;
 grant select
-on all views in database meetup_assessment
+on future views in database meetup_assessment
 to role superset_analyst_role
 ;
 

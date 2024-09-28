@@ -7,9 +7,9 @@ with
             data:user_id::varchar as user_id,
 
             -- strings
-            data:city::varchar as city,
-            data:country::varchar as country,
-            data:hometown::varchar as hometown
+            lower(data:city::varchar) as city,
+            lower(data:country::varchar) as country,
+            lower(data:hometown::varchar) as hometown
 
         from raw_users
     )

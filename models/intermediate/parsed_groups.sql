@@ -8,9 +8,9 @@ with
             data:group_id::varchar as group_id,
 
             -- strings
-            data:name::varchar as name,
+            lower(data:name::varchar) as name,
             data:description::varchar as description,
-            data:city::varchar as city,
+            lower(data:city::varchar) as city,
             data:link::varchar as link,
 
             -- numerics

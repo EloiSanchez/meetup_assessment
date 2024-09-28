@@ -8,8 +8,8 @@ with
 
             -- strings
             data:name::varchar as name,
-            data:city::varchar as city,
-            data:country::varchar as country,
+            lower(data:city::varchar) as city,
+            lower(data:country::varchar) as country,
 
             -- numerics
             data:lat::float as lat,
